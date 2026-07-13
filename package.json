@@ -1,0 +1,12 @@
+{
+  "name": "snip-bundle",
+  "version": "1.0.0",
+  "description": "URL shortener - bundled backend + frontend + CLI",
+  "main": "server.js",
+  "scripts": {
+    "start": "bun server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
