@@ -26,25 +26,27 @@
   }
 
   @if (links().length > 0) {
-    <table>
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Original URL</th>
-          <th>Hits</th>
-          <th>Created</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (link of links(); track link.code) {
+    <div class="links-card">
+      <table>
+        <thead>
           <tr>
-            <td><a [href]="link.shortUrl" target="_blank">{{ link.code }}</a></td>
-            <td class="url-cell"><a [href]="link.url" target="_blank">{{ link.url }}</a></td>
-            <td>{{ link.hits }}</td>
-            <td>{{ link.createdAt | date:'short' }}</td>
+            <th>Code</th>
+            <th>Original URL</th>
+            <th>Hits</th>
+            <th>Created</th>
           </tr>
-        }
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          @for (link of links(); track link.code) {
+            <tr>
+              <td><a [href]="link.shortUrl" target="_blank">{{ link.code }}</a></td>
+              <td class="url-cell"><a [href]="link.url" target="_blank">{{ link.url }}</a></td>
+              <td>{{ link.hits }}</td>
+              <td>{{ link.createdAt | date:'short' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   }
 </div>
