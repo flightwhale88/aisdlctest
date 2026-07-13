@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Commit Bundle Build System",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"commit-bundle.js"
+			],
+			"group": "build"
+		}
+	]
+}
