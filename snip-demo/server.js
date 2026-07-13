@@ -47,10 +47,16 @@ function error(message, status) {
 }
 
 function randomCode() {
-  const bytes = crypto.getRandomValues(new Uint8Array(6));
   let code = "";
+  const maxUnbiasedValue = Math.floor(256 / base62.length) * base62.length;
 
-  for (const value of bytes) {
+  while (code.length < 6) {
+    const [value] = crypto.getRandomValues(new Uint8Array(1));
+
+    if (value >= maxUnbiasedValue) {
+      continue;
+    }
+
     code += base62[value % base62.length];
   }
 
